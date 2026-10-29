@@ -4,7 +4,6 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  /* Mobile nav */
   var toggle = document.querySelector(".nav-toggle");
   var mobileNav = document.getElementById("mobile-nav");
   if (toggle && mobileNav) {
@@ -22,7 +21,6 @@
     });
   }
 
-  /* Prefill pack select from CTA buttons */
   document.querySelectorAll("[data-pack]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var pack = btn.getAttribute("data-pack");
@@ -31,7 +29,6 @@
     });
   });
 
-  /* Contact form → mailto */
   var form = document.getElementById("contact-form");
   if (form) {
     form.addEventListener("submit", function (e) {
@@ -70,7 +67,6 @@
     window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* Scroll reveals */
   var revealEls = document.querySelectorAll("[data-reveal]");
   if (reduceMotion) {
     revealEls.forEach(function (el) {
@@ -86,7 +82,7 @@
           }
         });
       },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+      { rootMargin: "0px 0px -6% 0px", threshold: 0.1 }
     );
     revealEls.forEach(function (el) {
       io.observe(el);
@@ -97,21 +93,8 @@
     });
   }
 
-  /* Hero rotating outcomes */
-  var items = document.querySelectorAll(".hero-rotate-item");
-  if (items.length > 1 && !reduceMotion) {
-    var idx = 0;
-    setInterval(function () {
-      items[idx].classList.remove("is-active");
-      idx = (idx + 1) % items.length;
-      items[idx].classList.add("is-active");
-    }, 2800);
-  }
-
   /*
    * Stripe Payment Links (paused — wire when Stripe account is ready):
-   *   #pay-lead / #pay-meeting CTAs currently scroll to #contact
-   * When ready:
-   *   document.querySelector('#pay-lead .btn, a[href="#pay-lead"]').href = "https://buy.stripe.com/...";
+   * Pack CTAs currently scroll to #contact form.
    */
 })();
