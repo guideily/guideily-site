@@ -346,6 +346,12 @@ p:last-child { margin-bottom: 0; }
 @media (min-width: 820px) {
   .pack-grid { grid-template-columns: 1fr 1fr; align-items: stretch; }
 }
+@media (min-width: 980px) {
+  .pack-grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 820px) and (max-width: 979px) {
+  .pack-grid-3 .pack-card:first-child { grid-column: 1 / -1; }
+}
 .pack-card {
   position: relative;
   background: #141414;
@@ -684,4 +690,15 @@ p:last-child { margin-bottom: 0; }
     transform: none !important;
     transition: none !important;
   }
+}
+
+/* Secondary buttons inside the dark pricing section */
+.packs .btn-secondary {
+  color: #f4f1ea;
+  border-color: rgba(244, 241, 234, 0.35);
+}
+.packs .btn-secondary:hover {
+  background: rgba(244, 241, 234, 0.08);
+  border-color: #f4f1ea;
+  color: #f4f1ea;
 }
