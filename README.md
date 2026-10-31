@@ -10,7 +10,7 @@ Static marketing site for [guideily.com](https://guideily.com).
 For US B2B agencies, boutique SaaS, and recruiters. Not edtech.
 
 ## Stack
-Static HTML / CSS / JS on GitHub Pages. `CNAME` → `guideily.com`. The cache-bust query is `?v=4`.
+Static HTML / CSS / JS on GitHub Pages. `CNAME` → `guideily.com`. The cache-bust query is `?v=7`.
 
 ## Archive
 The footer permanently links to the previous edtech site via Wayback:
